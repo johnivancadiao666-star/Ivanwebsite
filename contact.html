@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Contact - Personal Website</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="contact-background">
+
+    <header>
+
+        <h1>
+            Welcome to My Personal Website
+        </h1>
+
+    </header>
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    HOME 
+                </a>
+            </li>
+
+            <li class="dropdown">
+
+                <a href="#" class="dropbtn">
+                    ABOUT ↓
+                </a>
+
+                <div class="dropdown-content">
+
+                    <a href="skills.html">
+                        Skills I'm Developing
+                    </a>
+
+                    <a href="goals.html">
+                        My Goals as a Student
+                    </a>
+
+                    <a href="funfacts.html">
+                        Fun Facts About Me
+                    </a>
+
+                </div>
+
+            </li>
+
+            <li>
+                <a href="gallery.html">
+                    GALLERY
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    CONTACT
+                </a>
+            </li>
+
+            <a
+                href="javascript:void(0);"
+                class="logout-button"
+                onclick="confirmLogout()"
+            >
+                LOG OUT
+            </a>
+
+        </ul>
+
+    </nav>
+
+    <section id="section2"></section>
+
+    <section id="contact">
+
+        <div class="contact-content">
+
+            <form
+                id="contactForm"
+                class="contact-form"
+            >
+
+                <h2>
+                    Let's Get in Touch
+                </h2>
+
+                <label for="name">
+                    Your Name:
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your Name"
+                >
+
+                <span
+                    class="error"
+                    id="nameError"
+                ></span>
+
+                <label for="email">
+                    Email:
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Your Email"
+                >
+
+                <span
+                    class="error"
+                    id="emailError"
+                ></span>
+
+                <label for="message">
+                    Message:
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Your Message"
+                ></textarea>
+
+                <span
+                    class="error"
+                    id="messageError"
+                ></span>
+
+                <button type="submit">
+                    <strong>
+                        SEND MESSAGE
+                    </strong>
+                </button>
+
+            </form>
+
+            <div class="contact-details">
+
+                <h3>
+                    <center>
+                        Contact Me
+                    </center>
+                </h3>
+
+                <p>
+                    <strong>
+                        Email Address:
+                    </strong>
+                    <br>
+                    ivan@gmail.com
+                </p>
+
+                <hr>
+
+                <p>
+                    <strong>
+                        Phone Number:
+                    </strong>
+                    <br>
+                    0968 686 6868
+                </p>
+
+                <hr>
+
+                <p>
+                    <strong>
+                        Address:
+                    </strong>
+                    <br>
+                   Poblacion, Antique, Philippines
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>
+           Contact:John Ivan Cadiao 
+        </p>
+
+    </footer>
+
+    <div class="footer-divider"></div>
+
+    <script>
+
+        const form =
+            document.querySelector("#contactForm");
+
+        const nameInput =
+            document.querySelector("#name");
+
+        const emailInput =
+            document.querySelector("#email");
+
+        const messageInput =
+            document.querySelector("#message");
+
+        form.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                let isValid = true;
+
+                document.getElementById(
+                    "nameError"
+                ).textContent = "";
+
+                document.getElementById(
+                    "emailError"
+                ).textContent = "";
+
+                document.getElementById(
+                    "messageError"
+                ).textContent = "";
+
+                if (
+                    nameInput.value.trim() === ""
+                ) {
+
+                    document.getElementById(
+                        "nameError"
+                    ).textContent =
+                        "Please enter your name.";
+
+                    isValid = false;
+                }
+
+                if (
+                    emailInput.value.trim() === ""
+                ) {
+
+                    document.getElementById(
+                        "emailError"
+                    ).textContent =
+                        "Please enter your email.";
+
+                    isValid = false;
+
+                } else if (
+                    !emailInput.value.includes("@")
+                ) {
+
+                    document.getElementById(
+                        "emailError"
+                    ).textContent =
+                        "Please enter a valid email.";
+
+                    isValid = false;
+                }
+
+                if (
+                    messageInput.value.trim() === ""
+                ) {
+
+                    document.getElementById(
+                        "messageError"
+                    ).textContent =
+                        "Please enter your message.";
+
+                    isValid = false;
+                }
+
+                if (isValid) {
+
+                    alert(
+                        "Thank you! Your message has been submitted."
+                    );
+
+                    form.reset();
+                }
+
+            }
+        );
+
+        function confirmLogout() {
+
+            const confirmed =
+                confirm(
+                    "Are you sure you want to log out?"
+                );
+
+            if (confirmed) {
+
+                localStorage.removeItem(
+                    'isLoggedIn'
+                );
+
+                window.location.href =
+                    'login.html';
+            }
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Gallery - Personal Website</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>
+            Welcome to My Personal Website
+        </h1>
+
+    </header>
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    HOME 
+                </a>
+            </li>
+
+            <li class="dropdown">
+
+                <a href="#" class="dropbtn">
+                    ABOUT ↓
+                </a>
+
+                <div class="dropdown-content">
+
+                    <a href="skills.html">
+                        Skills I'm Developing
+                    </a>
+
+                    <a href="goals.html">
+                        My Goals as a Student
+                    </a>
+
+                    <a href="funfacts.html">
+                        Fun Facts About Me
+                    </a>
+
+                </div>
+
+            </li>
+
+            <li>
+                <a href="gallery.html">
+                    GALLERY
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    CONTACT
+                </a>
+            </li>
+
+            <a
+                href="javascript:void(0);"
+                class="logout-button"
+                onclick="confirmLogout()"
+            >
+                LOG OUT
+            </a>
+
+        </ul>
+
+    </nav>
+
+    <section id="section2"></section>
+
+    <section id="gallery">
+
+        <h2>
+            Gallery
+        </h2>
+
+        <p>
+            Check out some of the images from
+            my recent photography:
+        </p>
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+
+                <img
+                    src="6.jpg"
+                    alt="Project Image 1"
+                    class="thumbnail"
+                    onclick="currentImageIndex=0; openLightbox();"
+                >
+
+                <p class="image-description">
+                    Description for Image 1
+                </p>
+
+            </div>
+
+            <div class="gallery-item">
+
+                <img
+                    src="7.jpg"
+                    alt="Project Image 2"
+                    class="thumbnail"
+                    onclick="currentImageIndex=1; openLightbox();"
+                >
+
+                <p class="image-description">
+                    Description for Image 2
+                </p>
+
+            </div>
+
+            <div class="gallery-item">
+
+                <img
+                    src="8.jpg"
+                    alt="Project Image 3"
+                    class="thumbnail"
+                    onclick="currentImageIndex=2; openLightbox();"
+                >
+
+                <p class="image-description">
+                    Description for Image 3
+                </p>
+
+            </div>
+
+            <div class="gallery-item">
+
+                <img
+                    src="9.jpg"
+                    alt="Project Image 4"
+                    class="thumbnail"
+                    onclick="currentImageIndex=3; openLightbox();"
+                >
+
+                <p class="image-description">
+                    Description for Image 4
+                </p>
+
+            </div>
+
+            <div class="gallery-item">
+
+                <img
+                    src="10.jpg"
+                    alt="Project Image 5"
+                    class="thumbnail"
+                    onclick="currentImageIndex=4; openLightbox();"
+                >
+
+                <p class="image-description">
+                    Description for Image 5
+                </p>
+
+            </div>
+
+            <div class="gallery-item">
+
+                <img
+                    src="10.jpg"
+                    alt="Project Image 6"
+                    class="thumbnail"
+                    onclick="currentImageIndex=5; openLightbox();"
+                >
+
+                <p class="image-description">
+                    Description for Image 6
+                </p>
+
+            </div>
+
+        </div>
+
+        <div
+            id="lightbox"
+            class="lightbox"
+            onclick="closeLightbox()"
+        >
+
+            <span
+                class="close"
+                onclick="event.stopPropagation(); closeLightbox();"
+            >
+                &times;
+            </span>
+
+            <a
+                class="prev"
+                onclick="event.stopPropagation(); changeImage(-1);"
+            >
+                &#10094;
+            </a>
+
+            <img
+                class="lightbox-content"
+                id="lightboxImage"
+                src=""
+                alt="Gallery Preview"
+            >
+
+            <a
+                class="next"
+                onclick="event.stopPropagation(); changeImage(1);"
+            >
+                &#10095;
+            </a>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>
+            &copy; 2024 Your Name.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+    <div class="footer-divider"></div>
+
+    <script src="script.js"></script>
+
+    <script>
+
+        function confirmLogout() {
+
+            const confirmed =
+                confirm(
+                    "Are you sure you want to log out?"
+                );
+
+            if (confirmed) {
+
+                localStorage.removeItem(
+                    'isLoggedIn'
+                );
+
+                window.location.href =
+                    'login.html';
+            }
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Goals as a Student</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>
+            Welcome to My Personal Website
+        </h1>
+
+    </header>
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    HOME 
+                </a>
+            </li>
+
+            <li class="dropdown">
+
+                <a href="#" class="dropbtn">
+                    ABOUT ↓
+                </a>
+
+                <div class="dropdown-content">
+
+                    <a href="skills.html">
+                        Skills I'm Developing
+                    </a>
+
+                    <a href="goals.html">
+                        My Goals as a Student
+                    </a>
+
+                    <a href="funfacts.html">
+                        Fun Facts About Me
+                    </a>
+
+                </div>
+
+            </li>
+
+            <li>
+                <a href="gallery.html">
+                    GALLERY
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    CONTACT
+                </a>
+            </li>
+
+            <a
+                href="javascript:void(0);"
+                class="logout-button"
+                onclick="confirmLogout()"
+            >
+                LOG OUT
+            </a>
+
+        </ul>
+
+    </nav>
+
+    <section id="section2"></section>
+
+    <section id="drop">
+
+        <h2>
+            My Goals as a Student
+        </h2>
+
+        <p>
+            Here are the aspirations I'm passionately pursuing!
+        </p>
+
+        <div class="goal-grid">
+
+            <div
+                class="goal-card"
+                onclick="toggleGoalDetails(1)"
+            >
+
+                <div
+                    class="goal-header"
+                    style="background-color:#6a1b9a;"
+                >
+                    <strong>
+                        Short-Term Goals
+                    </strong>
+                </div>
+
+                <p>
+                    <strong>
+                        Enhance my web development skills.
+                    </strong>
+                </p>
+
+                <div
+                    class="goal-details"
+                    id="goal1-details"
+                >
+
+                    <p>
+                        By focusing on these short-term goals,
+                        I am confident that I will enhance my
+                        web development skills and set a solid
+                        foundation for my future endeavors in
+                        the tech industry.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+                class="goal-card"
+                onclick="toggleGoalDetails(1)"
+            >
+
+                <div
+                    class="goal-header"
+                    style="background-color:#0288d1;"
+                >
+                    <strong>
+                        Long-Term Goals
+                    </strong>
+                </div>
+
+                <p>
+                    Become a proficient front-end developer.
+                </p>
+
+                <div
+                    class="goal-details"
+                    id="goal2-details"
+                >
+
+                    <p>
+                        By setting these long-term goals,
+                        I am dedicated to evolving as a
+                        front-end developer, contributing to
+                        impactful projects, and becoming a
+                        valuable asset in the technology landscape.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+                class="goal-card"
+                onclick="toggleGoalDetails(2)"
+            >
+
+                <div
+                    class="goal-header"
+                    style="background-color:#ffb300;"
+                >
+                    <strong>
+                        Personal Development
+                    </strong>
+                </div>
+
+                <p>
+                    Investing in Myself:
+                    My Personal Development Journey
+                </p>
+
+                <div
+                    class="goal-details"
+                    id="goal3-details"
+                >
+
+                    <p>
+                        I want to improve my communication,
+                        creativity, confidence, discipline,
+                        and ability to continuously learn
+                        new skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+                class="goal-card"
+                onclick="toggleGoalDetails(2)"
+            >
+
+                <div
+                    class="goal-header"
+                    style="background-color:#e53935;"
+                >
+                    <strong>
+                        Career Goals
+                    </strong>
+                </div>
+
+                <p>
+                    Building my future career in technology.
+                </p>
+
+                <div
+                    class="goal-details"
+                    id="goal4-details"
+                >
+
+                    <p>
+                        As I navigate my professional journey,
+                        I aim to gain experience, build useful
+                        projects, and become a skilled IT professional.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>
+            &copy; 2024 Your Name.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+    <div class="footer-divider"></div>
+
+    <script>
+
+        function toggleGoalDetails(group) {
+
+            const details1 =
+                document.getElementById(
+                    'goal' +
+                    (group * 2 - 1) +
+                    '-details'
+                );
+
+            const details2 =
+                document.getElementById(
+                    'goal' +
+                    (group * 2) +
+                    '-details'
+                );
+
+            details1.classList.toggle('active');
+            details2.classList.toggle('active');
+        }
+
+        function confirmLogout() {
+
+            const confirmed =
+                confirm(
+                    "Are you sure you want to log out?"
+                );
+
+            if (confirmed) {
+
+                localStorage.removeItem(
+                    'isLoggedIn'
+                );
+
+                window.location.href =
+                    'login.html';
+            }
+        }
+
+    </script>
+
+</body>
+</html>
